@@ -94,6 +94,7 @@ print(residualsq2)
 
 #presvote = 0.507583 + 0.023837 * difflog
 
+#Question 3
 
 # Run the regression  
 reg_model3 <- lm(voteshare ~ presvote, data = inc.sub)  
@@ -112,12 +113,15 @@ abline(reg_line3, col = "green")
 
 #voteshare = 0.441330 + 0.388018 * presvote
 
+#Question 4 
 
 reg_model4 <- lm(residualsq1 ~ residualsq2)
 
 summary(reg_model4)
 
-plot(residualsq1, residualsq2, main = "Scatterplot with Regression Line", xlab = "residualsq1", ylab = "residualsq2")  
+plot(residualsq1, residualsq2, main = "Scatterplot with Regression Line", 
+     xlab = "residualsq1", ylab = "residualsq2")
+
 reg_line4 <- lm(residualsq1 ~ residualsq2)
 abline(reg_line4, col = "yellow")
 
@@ -125,8 +129,8 @@ abline(reg_line4, col = "yellow")
   
 #residualsq1 = -5.934e-18 + 0.2569 * residualsq2
 
-#In this equation, the intercept (β₀) is estimated to be -5.934e-18, and the slope coefficient (β₁) for the explanatory variable residualsq2 is estimated to be 0.2569.
 
+#Question 5
 
 # Run the regression  
 reg_model5 <- lm(inc_sub$voteshare ~ inc_sub$difflog + inc_sub$presvote)  
@@ -138,6 +142,5 @@ summary(reg_model5)
   
 #voteshare = 0.4486442 + 0.0355431 * difflog + 0.2568770 * presvote
 
-#In this equation, the intercept (β₀) is estimated to be 0.4486442, the slope coefficient (β₁) for the explanatory variable difflog is estimated to be 0.0355431, and the slope coefficient (β₂) for the explanatory variable presvote is estimated to be 0.2568770.
 
 #Coeffecients of pressvote and residualsq2(based on reg_model2) are identical.
